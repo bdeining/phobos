@@ -8,6 +8,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 
+import com.bdeining.phobos.rest.data.endpoint.DataController;
+import com.bdeining.phobos.sql.connector.SqlConnector;
+import com.bdeining.phobos.sql.connector.SqlConnectorImpl;
+
 @SpringBootApplication
 public class Application {
 
@@ -28,6 +32,16 @@ public class Application {
             }
 
         };
+    }
+
+    @Bean
+    public DataController dataController() {
+        return new DataController(sqlConnector());
+    }
+
+    @Bean
+    public SqlConnector sqlConnector() {
+        return new SqlConnectorImpl();
     }
 
 }

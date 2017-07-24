@@ -1,6 +1,6 @@
 package com.bdeining.phobos.sql.connector;
 
-import com.bdeining.phobos.rest.data.endpoint.SensorReading;
+import com.bdeining.phobos.common.SensorReading;
 
 public interface SqlConnector {
 
