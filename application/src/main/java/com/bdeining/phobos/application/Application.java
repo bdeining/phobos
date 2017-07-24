@@ -1,4 +1,4 @@
-package com.bdeining.phobos.rest.data.endpoint;
+package com.bdeining.phobos.application;
 
 import java.util.Arrays;
 
