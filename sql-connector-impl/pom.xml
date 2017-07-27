@@ -14,8 +14,13 @@
 
     <dependencies>
         <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>6.0.6</version>
+        </dependency>
+        <dependency>
             <groupId>com.bdeining.phobos</groupId>
-            <artifactId>sql-connector-api</artifactId>
+            <artifactId>common</artifactId>
             <version>${project.version}</version>
         </dependency>
     </dependencies>

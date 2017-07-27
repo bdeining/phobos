@@ -30,12 +30,12 @@
         </dependency>
         <dependency>
             <groupId>com.bdeining.phobos</groupId>
-            <artifactId>sql-connector-api</artifactId>
+            <artifactId>common</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>com.bdeining.phobos</groupId>
-            <artifactId>common</artifactId>
+            <artifactId>sql-connector-impl</artifactId>
             <version>${project.version}</version>
         </dependency>
     </dependencies>
