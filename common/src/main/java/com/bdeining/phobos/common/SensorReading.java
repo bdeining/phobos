@@ -5,6 +5,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
+@Table(name = "sensor_reading")
 public class SensorReading {
 
     @Id
