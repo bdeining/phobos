@@ -1,6 +1,8 @@
 package com.bdeining.phobos.common;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -9,13 +11,16 @@ import javax.persistence.Table;
 public class SensorReading {
 
     @Id
-    private Integer id;
+    @GeneratedValue(strategy= GenerationType.AUTO)
+    private Long id;
 
     private Integer temp;
 
     private Integer voltage;
 
-    public Integer getId() {
+    private Integer sensorUuid;
+
+    public Long getId() {
         return id;
     }
 
@@ -25,6 +30,10 @@ public class SensorReading {
 
     public Integer getVoltage() {
         return voltage;
+    }
+
+    public Integer getSensorUuid() {
+        return sensorUuid;
     }
 
 }
