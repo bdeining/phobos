@@ -12,6 +12,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
+import com.bdeining.phobos.react.ReactController;
 import com.bdeining.phobos.rest.data.endpoint.DataController;
 
 @EntityScan("com.bdeining.phobos.common")
@@ -43,5 +44,11 @@ public class Application {
     public DataController dataController() {
         return new DataController();
     }
+
+    @Bean
+    public ReactController reactController() {
+        return new ReactController();
+    }
+
 
 }

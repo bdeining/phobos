@@ -33,6 +33,14 @@
             <artifactId>spring-boot-starter-data-jpa</artifactId>
             <version>1.5.4.RELEASE</version>
         </dependency>
+
+        <!-- Remove before production -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <version>1.5.4.RELEASE</version>
+            <optional>true</optional>
+        </dependency>
     </dependencies>
 
     <modules>
@@ -40,6 +48,7 @@
         <module>rest-data-endpoint</module>
         <module>sql-connector-impl</module>
         <module>application</module>
+        <module>react-ui</module>
     </modules>
 
     <build>
