@@ -18,7 +18,7 @@ public class SensorReading {
 
     private Integer voltage;
 
-    private Integer sensorUuid;
+    private String sensorUuid;
 
     public Long getId() {
         return id;
@@ -32,8 +32,17 @@ public class SensorReading {
         return voltage;
     }
 
-    public Integer getSensorUuid() {
+    public String getSensorUuid() {
         return sensorUuid;
     }
 
+    public SensorReading(Integer temp, Integer voltage, String sensorUuid) {
+        this.temp = temp;
+        this.voltage = voltage;
+        this.sensorUuid = sensorUuid;
+    }
+
+    public SensorReading() {
+
+    }
 }

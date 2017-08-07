@@ -22,11 +22,11 @@ public class DataController {
     @Autowired
     private SensorReadingRepository sensorReadingRepository;
 
+    private static final Logger LOGGER = LoggerFactory.getLogger(DataController.class);
+
     public DataController() {
 
     }
-
-    private static final Logger LOGGER = LoggerFactory.getLogger(DataController.class);
 
     @RequestMapping("/data")
     public HttpStatus data(@RequestBody SensorReading sensorReading) {
@@ -39,19 +39,16 @@ public class DataController {
     public List<SensorReading> getDataById(@PathVariable("sensorUuid") String sensorUuid) {
         LOGGER.info("Received sensor requests for {}", sensorUuid);
         try {
-            Integer integerSensorUuid = Integer.parseInt(sensorUuid);
-
-
             Iterable<SensorReading> sensorReadings = sensorReadingRepository.findAll();
             List<SensorReading> sensorReadingList = new ArrayList<>();
             for (SensorReading sensorReading : sensorReadings) {
-                if (sensorReading.getSensorUuid().equals(integerSensorUuid)) {
+                if (sensorReading.getSensorUuid().equals(sensorUuid)) {
                         sensorReadingList.add(sensorReading);
                 }
             }
 
             if (CollectionUtils.isEmpty(sensorReadingList)) {
-                LOGGER.info("No results found for {}", integerSensorUuid);
+                LOGGER.info("No results found for {}", sensorUuid);
                 return null;
             }
 
